@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linen Saree Collection – Saaj Sarees Inspiration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo-link">
+        <div class="logo-icon">S</div>
+        <span class="logo-text">SAAJ SAREES</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link active" id="nav-shop">Shop Collection</a></li>
+          <li><a href="#" class="nav-link" id="nav-manage">Manage Catalog</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Search sarees...">
+          <button type="button" aria-label="Search">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </button>
+        </div>
+
+        <button class="btn-icon" id="cart-trigger" aria-label="View Cart">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L1.01 1.379 1.01 1.378A.5.5 0 0 1 .5 1.5H0zm3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+          <span class="badge-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">Cotton Linen Sarees</h1>
+        <p class="hero-subtitle">Discover our signature line of breathable, lightweight, and hand-loomed linen sarees. Styled with classic borders, floral motifs, and premium zari weaving. Perfect for any occasion.</p>
+        <div class="hero-actions-btn">
+          <button class="btn-primary" id="btn-explore">Explore Collection</button>
+        </div>
+      </div>
+      <div class="hero-banner-image">
+        <img src="assets/hero_banner.png" alt="Saaj Saree Linen Lookbook Cover" onerror="this.style.display='none';">
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Main Container -->
+  <main class="container" style="flex-grow: 1;">
+    <!-- Controls (Filter / Sort) -->
+    <div class="catalog-controls">
+      <div class="filter-group">
+        <select class="control-select" id="filter-badge">
+          <option value="all">All Badges</option>
+          <option value="sale">Sale</option>
+          <option value="new">New Arrival</option>
+          <option value="handloom">Handloom</option>
+          <option value="trending">Trending</option>
+        </select>
+
+        <select class="control-select" id="filter-price">
+          <option value="all">All Prices</option>
+          <option value="under-1500">Under ₹1,500</option>
+          <option value="1500-2500">₹1,500 - ₹2,500</option>
+          <option value="above-2500">Above ₹2,500</option>
+        </select>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span class="product-count" id="total-product-count">Showing 0 products</span>
+        <select class="control-select" id="sort-by">
+          <option value="featured">Sort by: Featured</option>
+          <option value="price-low-high">Price: Low to High</option>
+          <option value="price-high-low">Price: High to Low</option>
+          <option value="alphabetical">Alphabetical: A-Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-grid">
+      <!-- Injected dynamically via app.js -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-logo">SAAJ SAREES</div>
+      <div>&copy; 2026 Saaj Sarees Inspiration. Created with modern web practices.</div>
+      <ul class="footer-links">
+        <li><a href="#" id="footer-manage-link">Dashboard</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Theme Switching Widget -->
+  <div class="theme-panel" id="theme-panel">
+    <button class="theme-trigger" id="theme-trigger" aria-label="Toggle Color Themes" title="Switch Theme Color Palette">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M4 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0z"/>
+      </svg>
+    </button>
+    <div class="theme-options">
+      <button class="theme-opt-btn active" data-scheme="scheme-1">
+        <span class="theme-dot theme-dot-1"></span> Theme 1: Pearl (Light)
+      </button>
+      <button class="theme-opt-btn" data-scheme="scheme-2">
+        <span class="theme-dot theme-dot-2"></span> Theme 2: Soft Silk
+      </button>
+      <button class="theme-opt-btn" data-scheme="scheme-3">
+        <span class="theme-dot theme-dot-3"></span> Theme 3: Peach Organza
+      </button>
+      <button class="theme-opt-btn" data-scheme="scheme-4">
+        <span class="theme-dot theme-dot-4"></span> Theme 4: Golden Zari
+      </button>
+      <button class="theme-opt-btn" data-scheme="scheme-5">
+        <span class="theme-dot theme-dot-5"></span> Theme 5: Midnight Silk
+      </button>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <button class="cart-close" id="cart-close" aria-label="Close Cart">&times;</button>
+      </div>
+
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Injected dynamically via app.js -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-totals-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">₹0.00</span>
+        </div>
+        <div class="cart-totals-row cart-totals-total">
+          <span>Total</span>
+          <span id="cart-total">₹0.00</span>
+        </div>
+        <button class="btn-checkout" id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quick-view-modal">
+    <div class="modal-window quick-view-window">
+      <button class="modal-close" id="quick-view-close" aria-label="Close modal">&times;</button>
+      <div class="quick-view-grid">
+        <div class="quick-view-gallery">
+          <span class="qv-badge" id="qv-badge">Sale</span>
+          <img id="qv-image" src="" alt="Product Quick View">
+        </div>
+        <div class="quick-view-details">
+          <h2 class="qv-title" id="qv-title">Saree Title</h2>
+          <div class="qv-rating" id="qv-rating">
+            <!-- Stars loaded dynamically -->
+          </div>
+          <div class="qv-price-wrapper">
+            <span class="qv-price" id="qv-price">₹0.00</span>
+            <span class="qv-price-original" id="qv-price-original">₹0.00</span>
+          </div>
+          <p class="qv-description" id="qv-description">Description goes here.</p>
+          
+          <div class="qv-meta">
+            <div class="qv-meta-item">
+              <span class="qv-meta-label">Fabric:</span>
+              <span>Premium Cotton Linen</span>
+            </div>
+            <div class="qv-meta-item">
+              <span class="qv-meta-label">Length:</span>
+              <span>5.5 Meters + 0.8 Meters Blouse</span>
+            </div>
+            <div class="qv-meta-item">
+              <span class="qv-meta-label">Availability:</span>
+              <span id="qv-stock-status">In Stock</span>
+            </div>
+          </div>
+
+          <div class="qv-actions">
+            <button class="btn-primary" style="flex-grow: 1;" id="qv-add-to-cart">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Catalog Management Modal (Dashboard) -->
+  <div class="modal-backdrop" id="manage-modal">
+    <div class="modal-window">
+      <button class="modal-close" id="manage-close" aria-label="Close modal">&times;</button>
+      <h2 class="modal-title">Catalog Management Dashboard</h2>
+      
+      <div class="dashboard-tabs">
+        <button class="dashboard-tab active" data-tab="manual-tab">Add Manually</button>
+        <button class="dashboard-tab" data-tab="csv-tab">Import CSV</button>
+      </div>
+
+      <!-- Tab 1: Manual Upload -->
+      <div class="dashboard-panel active" id="manual-tab">
+        <form id="manual-upload-form">
+          <div class="form-group">
+            <label for="prod-title">Saree Title *</label>
+            <input type="text" id="prod-title" class="form-control" placeholder="e.g. Traditional Handloom Linen Saree" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="prod-desc">Description</label>
+            <textarea id="prod-desc" class="form-control" rows="3" placeholder="Saree details, weaving pattern, color gradients..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-price">Price (₹) *</label>
+              <input type="number" id="prod-price" class="form-control" placeholder="e.g. 1999" required min="1">
+            </div>
+            <div class="form-group">
+              <label for="prod-discount-price">Discount Price (₹)</label>
+              <input type="number" id="prod-discount-price" class="form-control" placeholder="Leave empty for regular price" min="1">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-badge">Badge / Label</label>
+              <select id="prod-badge" class="form-control">
+                <option value="">None</option>
+                <option value="Sale">Sale</option>
+                <option value="New Arrival">New Arrival</option>
+                <option value="Handloom">Handloom</option>
+                <option value="Trending">Trending</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="prod-rating">Rating (1 to 5 Stars)</label>
+              <select id="prod-rating" class="form-control">
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="prod-image">Image URL</label>
+            <input type="url" id="prod-image" class="form-control" placeholder="https://example.com/image.jpg (or leave blank for custom placeholder)">
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="prod-stock" checked> &nbsp; Product is In Stock
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary btn-form-submit">Add Product to Catalog</button>
+        </form>
+      </div>
+
+      <!-- Tab 2: CSV Import -->
+      <div class="dashboard-panel" id="csv-tab">
+        <div class="upload-area" id="csv-dropzone">
+          <div class="upload-icon">
+            <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+              <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.914-3.517.311-1.758 1.448-3.243 3.003-3.774zm-.058.987c-1.258.423-2.228 1.545-2.483 2.87a.5.5 0 0 1-.482.408C1.512 7.6 1 8.397 1 9.318 1 10.82 2.235 12 3.781 12h8.906C13.98 12 15 11.037 15 9.773c0-1.127-.852-2.072-1.954-2.155a.5.5 0 0 1-.462-.354C12.28 4.6 10.3 3 8 3a4.53 4.53 0 0 0-3.652 1.329.5.5 0 0 1-.708.06l-.292-.26z"/>
+            </svg>
+          </div>
+          <p class="upload-text">Drag & drop your CSV catalog file here or <strong>browse files</strong></p>
+          <p class="upload-hint">Supported files: CSV (UTF-8 encoded)</p>
+          <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
+        </div>
+
+        <div style="margin-top: 10px; text-align: center;">
+          <a class="sample-csv-link" id="download-csv-template">📄 Download Sample CSV Template</a>
+        </div>
+
+        <div style="margin-top: 24px; padding: 12px; background-color: var(--border-color); border-radius: var(--border-radius-sm); font-size: 13px;">
+          <strong style="display:block; margin-bottom: 6px; text-transform: uppercase; font-size: 11px;">Expected CSV Column Headers:</strong>
+          <code>Title, Description, Price, DiscountPrice, ImageUrl, Badge, Rating, InStock</code>
+        </div>
+      </div>
+
+      <!-- General Operations -->
+      <div class="btn-group-actions">
+        <button class="btn-secondary btn-reset-catalog" id="reset-catalog-btn">Restore Curated Defaults</button>
+        <span class="upload-hint">Resets all products, clearing custom uploads.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
