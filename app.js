@@ -756,7 +756,7 @@ function generateSampleCsvTemplate() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.setAttribute("href", url);
-  link.setAttribute("download", "saaj_saree_template.csv");
+  link.setAttribute("download", "vineet_saree_template.csv");
   link.style.visibility = 'hidden';
   document.body.appendChild(link);
   link.click();
